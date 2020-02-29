@@ -20,7 +20,7 @@ const run = async () => {
 
     app.use("/artists", artists);
     app.use("/albums", albums);
-    // app.use("/tracks", tracks);
+    app.use("/tracks", tracks);
 
     app.listen(port, () => {
         console.log(`Server started on ${port} port!`);

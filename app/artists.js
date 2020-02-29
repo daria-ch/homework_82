@@ -27,9 +27,9 @@ router.post("/", upload.single("photo"), async (req, res) => {
     const artistData = req.body;
 
     if (req.file) {
-        artistData.image = req.file.filename;
+        artistData.photo = req.file.filename;
     } else {
-        artistData.image = null;
+        artistData.photo = null;
     }
 
     const artist = new Artist(artistData);

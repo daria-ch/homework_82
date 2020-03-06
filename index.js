@@ -15,7 +15,8 @@ app.use(express.static("public"));
 const run = async () => {
     await mongoose.connect("mongodb://localhost/music", {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useCreateIndex: true
     });
 
     app.use("/artists", artists);

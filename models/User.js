@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const nanoid = require('nanoid');
 
 const Schema = mongoose.Schema;
 
@@ -18,6 +18,10 @@ const UserSchema = new Schema({
         required: true
     }
 });
+
+UserSchema.methods.generateToken = function () {
+    this.token = nanoid();
+};
 
 const User = mongoose.model('User', UserSchema);
 
